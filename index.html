@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moose Race — Random Winner Selector</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- ===== Entry screen ===== -->
+    <section id="entry-screen">
+      <div class="entry-card">
+        <h1>🫎 MOOSE RACE 🫎</h1>
+        <p class="tagline">Who's the lucky moose? The forest decides!</p>
+        <label for="names-input">Enter the contestants (one name per line, up to 500!):</label>
+        <textarea id="names-input" rows="8" spellcheck="false"
+placeholder="Alice
+Bob
+Charlie
+Dana"></textarea>
+        <p id="entry-count" class="tagline"></p>
+        <div class="entry-buttons">
+          <button id="start-btn" class="big-btn">🏁 START THE RACE!</button>
+          <button id="demo-btn" class="ghost-btn">Surprise me</button>
+        </div>
+        <p id="entry-error" class="error hidden"></p>
+      </div>
+    </section>
+
+    <!-- ===== Race screen ===== -->
+    <section id="race-screen" class="hidden">
+      <div id="hud-top">
+        <div id="commentary">Welcome to the Great Forest Moose Race!</div>
+        <button id="mute-btn" title="Toggle sound">🔊</button>
+      </div>
+      <div id="standings-wrap">
+        <h2>🏆 Standings</h2>
+        <ol id="standings"></ol>
+      </div>
+      <canvas id="track"></canvas>
+      <div id="countdown" class="hidden"></div>
+      <div id="finish-banner" class="hidden">FINISH</div>
+    </section>
+
+    <!-- ===== Winner overlay ===== -->
+    <section id="winner-screen" class="hidden">
+      <div class="winner-card">
+        <div class="winner-eyebrow">🎉 AND THE WINNER IS... 🎉</div>
+        <img id="winner-moose-img" alt="winning moose" class="winner-dance">
+        <div id="winner-name">Moose</div>
+        <div class="winner-sub" id="winner-sub">Champion of the forest!</div>
+        <div class="entry-buttons">
+          <button id="rerun-btn" class="big-btn">🔁 Race again!</button>
+          <button id="edit-btn" class="ghost-btn">✏️ Edit names</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
